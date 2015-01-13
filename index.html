@@ -53,5 +53,24 @@
 	  <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
 	  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<script src="http://static.bmob.cn/bmob-min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		Bmob.initialize("2663a62c5845c9da171f09feceb7ec8f", "ed8b9b3829afad362fab027ce93a5952");
+
+		var Test = Bmob.Object.extend("Test");
+		var query = new Bmob.Query(Test);
+
+		query.find({success: function(obj){
+			alert(obj[0].get("age"));
+			alert(obj[0].get("name"));
+			console.dir(obj);
+		}});
+
+
+	});
+	</script>
+
+
   </body>
 </html>
